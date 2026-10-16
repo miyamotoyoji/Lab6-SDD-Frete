@@ -3,7 +3,7 @@
 
 def calcular_frete(subtotal: float) -> float:
     """REQ-01 e REQ-02: tarifa padrão com isenção por subtotal."""
-    return 0.00 if subtotal >= 200.00 else 15.00
+    return 0.00 if subtotal >= 250.00 else 15.00
 
 
 def calcular_total(subtotal: float) -> float:

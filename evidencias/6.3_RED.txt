@@ -1,0 +1,68 @@
+....FF......FF..                                                         [100%]
+================================== FAILURES ===================================
+_________________ test_req01_frete_padrao_abaixo_limite[200] __________________
+
+subtotal = 200
+
+    @pytest.mark.parametrize("subtotal", [0, 50, 150, 199.99, 200, 249.99])
+    def test_req01_frete_padrao_abaixo_limite(subtotal):
+        """REQ-01: tarifa padr�o abaixo do limite de isen��o."""
+>       assert calcular_frete(subtotal) == 15.00
+E       assert 0.0 == 15.0
+E        +  where 0.0 = calcular_frete(200)
+
+tests\test_frete.py:11: AssertionError
+________________ test_req01_frete_padrao_abaixo_limite[249.99] ________________
+
+subtotal = 249.99
+
+    @pytest.mark.parametrize("subtotal", [0, 50, 150, 199.99, 200, 249.99])
+    def test_req01_frete_padrao_abaixo_limite(subtotal):
+        """REQ-01: tarifa padr�o abaixo do limite de isen��o."""
+>       assert calcular_frete(subtotal) == 15.00
+E       assert 0.0 == 15.0
+E        +  where 0.0 = calcular_frete(249.99)
+
+tests\test_frete.py:11: AssertionError
+__________________ test_req01_req02_total_do_pedido[200-215] __________________
+
+subtotal = 200, total = 215
+
+    @pytest.mark.parametrize(
+        "subtotal,total",
+        [(0, 15), (150, 165), (199.99, 214.99), (200, 215), (249.99, 264.99), (250, 250), (300, 300)],
+    )
+    def test_req01_req02_total_do_pedido(subtotal, total):
+        """REQ-01 + REQ-02: soma com tarifa padr�o ou isenta."""
+>       assert calcular_total(subtotal) == pytest.approx(total)
+E       assert 200.0 == 215 � 2.1e-04
+E         
+E         comparison failed
+E         Obtained: 200.0
+E         Expected: 215 � 2.1e-04
+
+tests\test_frete.py:26: AssertionError
+_______________ test_req01_req02_total_do_pedido[249.99-264.99] _______________
+
+subtotal = 249.99, total = 264.99
+
+    @pytest.mark.parametrize(
+        "subtotal,total",
+        [(0, 15), (150, 165), (199.99, 214.99), (200, 215), (249.99, 264.99), (250, 250), (300, 300)],
+    )
+    def test_req01_req02_total_do_pedido(subtotal, total):
+        """REQ-01 + REQ-02: soma com tarifa padr�o ou isenta."""
+>       assert calcular_total(subtotal) == pytest.approx(total)
+E       assert 249.99 == 264.99 � 2.6e-04
+E         
+E         comparison failed
+E         Obtained: 249.99
+E         Expected: 264.99 � 2.6e-04
+
+tests\test_frete.py:26: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_frete.py::test_req01_frete_padrao_abaixo_limite[200] - asse...
+FAILED tests/test_frete.py::test_req01_frete_padrao_abaixo_limite[249.99] - a...
+FAILED tests/test_frete.py::test_req01_req02_total_do_pedido[200-215] - asser...
+FAILED tests/test_frete.py::test_req01_req02_total_do_pedido[249.99-264.99]
+4 failed, 12 passed in 0.11s

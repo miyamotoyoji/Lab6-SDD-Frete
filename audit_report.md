@@ -10,8 +10,8 @@ O experimento da tag `exercicio-6.2-drift` adicionou cupom sem requisito. Os 13 
 
 | Cláusula EARS | Status após correção | Teste coberto | Implementação |
 |---|---|---|---|
-| REQ-01: frete padrão R$15 e composição do total | Conforme | tests/test_frete.py:9 e :24 | src/frete.py:4 e :9 |
-| REQ-02: gratuidade a partir do limite da spec | Conforme | tests/test_frete.py:15 e :24 | src/frete.py:6 |
+| REQ-01: frete padrão R$15 e composição do total | Conforme | tests/test_frete.py:9 e :25 | src/frete.py:4 e :9 |
+| REQ-02: gratuidade a partir do limite da spec | Conforme | tests/test_frete.py:15 e :25 | src/frete.py:6 |
 | CUPOM: não existe cláusula EARS | DRIFT no candidato; removido da versão corrigida | Sem teste de requisito: regra inexistente | Candidato: src/frete.py:9–14; ausente após correção |
 
 As linhas do candidato pertencem à tag do experimento. As demais referências apontam para o arquivo corrigido. Na etapa 6.2 o limite é R$200; na etapa 6.3 passa a R$250 com atualização conjunta de spec e testes.

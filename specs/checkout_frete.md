@@ -1,9 +1,13 @@
-# Checkout: cálculo de frete — versão 1
+# Checkout: cálculo de frete — versão 2
 
 ## Requisitos EARS
 
 - **REQ-01 (ubíquo):** O sistema deve calcular o total do pedido somando o frete padrão de R$15,00 ao subtotal do carrinho, respeitando a isenção prevista em REQ-02.
-- **REQ-02 (condicional):** Se o subtotal do carrinho for maior ou igual a R$200,00, então o sistema deve aplicar frete grátis (R$0,00).
+- **REQ-02 (condicional):** Se o subtotal do carrinho for maior ou igual a R$250,00, então o sistema deve aplicar frete grátis (R$0,00).
+
+## Alteração do exercício 6.3
+
+O limite anterior era R$200,00. Nesta versão, R$200,00 e R$249,99 pagam R$15,00; R$250,00 e valores superiores recebem isenção. REQ-01 e o contrato permanecem iguais. Esta especificação foi atualizada antes dos testes e do código.
 
 ## Contrato e escopo
 
